@@ -42,7 +42,7 @@ $(function(){
 });
 
 //處理使用者按下按鍵
-$(document).on("keydown",function(event){
+$(document).on("keydown",function(moveevent){
         let targetImg, targetBlock, cutImagePositionX;
         //cutImagePositionX - 決定主角臉朝向哪個方向
         targetImg = { //主角的目標座標
@@ -53,9 +53,9 @@ $(document).on("keydown",function(event){
             "x":-1,
             "y":-1
         };
-        event.preventDefault();
+        moveevent.preventDefault();
         //console.log(event);
-        switch(event.code){
+        switch(moveevent.code){
             case "ArrowLeft":
                 targetImg.x = currentImgMain.x - gridLength;
                 targetImg.y = currentImgMain.y;
